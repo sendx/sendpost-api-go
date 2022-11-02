@@ -3,6 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AccountID** | **int64** |  | [optional] [default to null]
+**AmpBody** | **string** |  | [optional] [default to null]
+**Attempt** | **int64** |  | [optional] [default to null]
 **CustomFields** | [***interface{}**](interface{}.md) |  | [optional] [default to null]
 **EmailType** | **string** |  | [optional] [default to null]
 **From** | [***ModelsFrom**](models.From.md) |  | [optional] [default to null]

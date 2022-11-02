@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**IPRouterDelete**](AccountipApi.md#IPRouterDelete) | **Delete** /account/ip/{ipid} | 
 [**IPRouterGet**](AccountipApi.md#IPRouterGet) | **Get** /account/ip/{ipid} | 
 [**IPRouterGetAll**](AccountipApi.md#IPRouterGetAll) | **Get** /account/ip/ | 
+[**IPRouterGetAllIPIncidents**](AccountipApi.md#IPRouterGetAllIPIncidents) | **Get** /account/ip/{ipid}/incident | 
 [**IPRouterUpdate**](AccountipApi.md#IPRouterUpdate) | **Put** /account/ip/{ipid} | 
 
 
@@ -41,7 +42,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **IPRouterCount**
-> ModelsCountStat IPRouterCount(ctx, xAccountApiKey)
+> ModelsCountStat IPRouterCount(ctx, xAccountApiKey, optional)
 
 
 Count Total AccountIPs
@@ -52,6 +53,17 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **xAccountApiKey** | **string**| Account API Key | 
+ **optional** | ***AccountipApiIPRouterCountOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a AccountipApiIPRouterCountOpts struct
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **filterBy** | **optional.String**| filterBy | 
+ **filterValue** | **optional.Int64**| filterValue | 
+ **search** | **optional.String**| search term | 
 
 ### Return type
 
@@ -148,11 +160,42 @@ Name | Type | Description  | Notes
 
  **offset** | **optional.Int64**| offset | 
  **limit** | **optional.Int64**| limit | 
+ **filterBy** | **optional.String**| filterBy | 
+ **filterValue** | **optional.Int64**| filterValue | 
  **search** | **optional.String**| search term | 
 
 ### Return type
 
 [**[]ModelsIp**](models.IP.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **IPRouterGetAllIPIncidents**
+> []ModelsIncident IPRouterGetAllIPIncidents(ctx, xAccountApiKey, ipid)
+
+
+Get All Incidents associated with a IP
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **xAccountApiKey** | **string**| Account API Key | 
+  **ipid** | **int64**| The ipid whose incidents you want to retrieve | 
+
+### Return type
+
+[**[]ModelsIncident**](models.Incident.md)
 
 ### Authorization
 
